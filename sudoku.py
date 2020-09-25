@@ -15,18 +15,18 @@ def parse(sudoku):
         int(sudoku.strip())
     except: #return None if not int
         #if not all characters are int in the sequence
-        print("Input not understood :(")
+        #print("Input not understood :(")
         return( None)
     
     st = (sudoku)
     
     if len(st)<16: # checks if all numbers of sudoku are present
         #not enough numbers
-        print("Input not understood :( \nSudoku invalid; not all numbers present")
+        #print("Input not understood :( \nSudoku invalid; not all numbers present")
         return None
 
     elif sum([int(_) for _ in list(str(st))]) != 40: #checks if sum of all numbers input for validation equals 40
-        print("Input not understood :( \nSudoku invalid , total sum is not 40")  #total sum not 40 for the 2*2 sudoku grid
+        #print("Input not understood :( \nSudoku invalid , total sum is not 40")  #total sum not 40 for the 2*2 sudoku grid
         return None
     else: # parse sudoku because its fine
 
@@ -56,10 +56,9 @@ def is_valid(stucture):
         if sorted(tup) == [1, 2, 3, 4]:
             num_correct += 1
             if num_correct == 12:
-                print("This sudoku is *VALID*")
                 return True
         else:
-            print("This sudoku is *INVALID*")
+            
             return False 
 
 def main():
@@ -69,9 +68,12 @@ def main():
     if sud.lower() != 'q': # if user inputs q or Q for quitting     
         parsed = parse(sud)
         if parsed:
-            is_valid( parseed )
+            if is_valid( parsed ):
+                print("This sudoku is *VALID*")
+            else:
+                print("This sudoku is *INVALID*")  
         else:
-            print(parsed)
+            print("Input not understood :(")
     else:
         print("You chose to quit :(")
 
