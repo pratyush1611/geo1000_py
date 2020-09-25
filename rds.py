@@ -1,6 +1,6 @@
 # GEO1000 - Assignment 2
-# Authors: Pratyush Kumar, Michiel de Jong
-# Studentnumbers: 5359252 , 4376978
+# Authors: Pratyush Kumar & Michiel de Jong
+# Studentnumbers: 5359252 & 4376978
 
 import string
 
